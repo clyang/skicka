@@ -331,7 +331,7 @@ func (gd *GDrive) UploadFileContentsResumable(file *File,
 	}
 
 	// TODO: what is a reasonable default here? Must be 256kB minimum.
-	chunkSize := 1024 * 1024
+	chunkSize := 1024 * 1024 * 128
 
 	seekableReader := makeSomewhatSeekableReader(contentsReader, 2*chunkSize)
 
